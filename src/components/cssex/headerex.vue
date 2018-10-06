@@ -1,37 +1,65 @@
 <template>
   <div>
-    <div id="logo">Logo</div>
-    <div class="menu-wrapper">
-      <span class="menu">menu1</span>
-      <span class="menu">menu2</span>
-      <span class="menu">menu3
-        <transition name="fade"> 
-          <div class="sub-menu">sub1</div>
-          <div class="sub-menu">sub2</div>
-          <div class="sub-menu">sub3</div>
-        </transition>
-      </span>
+    <div class="header-wrapper">
+      <div class="logo">LOGO</div>
+      <div class="menu-group">
+        <a href="/" class="btn">메뉴1</a>
+        <a href="/" class="btn">메뉴2</a>
+        <div class="menu-wrapper">
+          <a href="/" class="btn">메뉴3</a>
+          <transition name="fade">
+            <ul>
+              <li class="subitems" @click="menuclick">sub-menu1</li>
+              <li class="subitems" @click="menuclick">sub-menu2</li>
+              <li class="subitems" @click="menuclick">sub-menu3</li>
+              <li class="subitems" @click="menuclick">sub-menu4</li>
+            </ul>
+          </transition>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+<script>
+import TestComponent from './vuetest'
+
+export default {
+  name: 'headerExample',
+  components: {
+    TestComponent
+  },
+  methods: {
+    menuclick: function (e) {
+      console.log(e.target.innerText);
+    }
+  }
+}
+</script>
 <style scoped>
-#logo {
+.logo {
   float: left;
 }
-.menu-wrapper {
+.menu-group {
   float: right;
 }
-.menu {
-  display: relative;
+.header-wrapper {
+  height: 100px;
+  background: aqua;
 }
-.sub-menu {
+.menu-wrapper {
+  display: inline-block;
+}
+.menu-wrapper > ul {
   display: none;
+  background-color: tomato;
+  padding-top: 40px;
+  transition: all 0.5s;
 }
-.menu:hover .sub-menu {
+.menu-wrapper:hover ul {
   display: block;
-  background-color: #50505050;
+  position: absolute;
+  top: 100px;
 }
-.fade-enter .fade-enter-active {
-  
-}
+
+
 </style>
