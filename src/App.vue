@@ -33,6 +33,11 @@ export default {
   border: gray solid 1px;
   margin: 10px;
   padding: 10px;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  
 }
 
 </style>
