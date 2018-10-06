@@ -5,7 +5,17 @@
       <div class="menu-group">
         <a href="/" class="btn">메뉴1</a>
         <a href="/" class="btn">메뉴2</a>
-        <a href="/" class="btn">메뉴3</a>
+        <div class="menu-wrapper">
+          <a href="/" class="btn">메뉴3</a>
+          <transition name="fade">
+            <ul>
+              <li class="subitems" @click="menuclick">sub-menu1</li>
+              <li class="subitems" @click="menuclick">sub-menu2</li>
+              <li class="subitems" @click="menuclick">sub-menu3</li>
+              <li class="subitems" @click="menuclick">sub-menu4</li>
+            </ul>
+          </transition>
+        </div>
       </div>
     </div>
   </div>
@@ -17,6 +27,11 @@ export default {
   name: 'headerExample',
   components: {
     TestComponent
+  },
+  methods: {
+    menuclick: function (e) {
+      console.log(e.target.innerText);
+    }
   }
 }
 </script>
@@ -31,5 +46,20 @@ export default {
   height: 100px;
   background: aqua;
 }
+.menu-wrapper {
+  display: inline-block;
+}
+.menu-wrapper > ul {
+  display: none;
+  background-color: tomato;
+  padding-top: 40px;
+  transition: all 0.5s;
+}
+.menu-wrapper:hover ul {
+  display: block;
+  position: absolute;
+  top: 100px;
+}
+
 
 </style>
