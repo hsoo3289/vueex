@@ -3,12 +3,12 @@
     <div class="header-wrapper">
       <div class="logo">LOGO</div>
       <div class="menu-group">
-        <a href="/" class="btn">메뉴1</a>
+        <button class="btn" @click="showSubmenu">메뉴1</button>
         <a href="/" class="btn">메뉴2</a>
-        <div class="menu-wrapper">
+        <div class="menu-wrapper" @mouseenter="showSubmenu" @mouseleave="hideSubmenu">
           <a href="/" class="btn">메뉴3</a>
           <transition name="fade">
-            <ul>
+            <ul ref="ul" v-if="submenu">
               <li class="subitems" @click="menuclick">sub-menu1</li>
               <li class="subitems" @click="menuclick">sub-menu2</li>
               <li class="subitems" @click="menuclick">sub-menu3</li>
@@ -28,9 +28,21 @@ export default {
   components: {
     TestComponent
   },
+  data: function () {
+    return {submenu: false};
+  },
   methods: {
     menuclick: function (e) {
       console.log(e.target.innerText);
+    },
+    showSubmenu: function (e) {
+      console.log(e);
+      this.submenu = true;
+      
+    },
+    hideSubmenu: function (e) {
+      console.log(e);
+      this.submenu = false;
     }
   }
 }
@@ -52,14 +64,15 @@ export default {
 .menu-wrapper > ul {
   display: none;
   background-color: tomato;
-  padding-top: 40px;
-  transition: all 0.5s;
-}
-.menu-wrapper:hover ul {
-  display: block;
   position: absolute;
-  top: 100px;
+  padding-top: 40px;
+  transition: all 0.5s ease-in-out;
 }
-
+.fade-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+.fade-enter {
+  transition: all 0.5s ease-in-out;
+}
 
 </style>
