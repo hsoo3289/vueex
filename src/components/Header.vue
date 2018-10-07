@@ -5,6 +5,7 @@
     <router-link to="/css" class="btn">CSS ex</router-link>
     <router-link to="/footer" class="btn">FOOTER ex</router-link>
     <router-link to="/header" class="btn">Header ex</router-link>
+    <router-link to="/header2" class="btn">Header ex2</router-link>
   </div>
 </template>
 <script>
@@ -20,10 +21,5 @@ export default {
   height: 100%;
   text-transform: uppercase;
 }
-.flex1 {
-}
-.flex2 {
-}
-.flex3 {
-}
+
 </style>

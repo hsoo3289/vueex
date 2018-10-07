@@ -22,10 +22,20 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+}
+#app {
+  background: lightgray;
+  font-family: 'Noto Sans KR', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
 #router-view {
   background-color: yellowgreen;
   height: 80vh;
-  width: 80%;
+  max-width: 1080px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .btn {
   display: inline-block;
@@ -34,10 +44,11 @@ export default {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  text-decoration: none;
 }
-
 .btn:hover {
-  
+  box-shadow: 2px 2px 4px gray;
+  transition: all 0.2s;
 }
 
 </style>
