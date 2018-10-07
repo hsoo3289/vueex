@@ -21,10 +21,5 @@ export default {
   height: 100%;
   text-transform: uppercase;
 }
-.flex1 {
-}
-.flex2 {
-}
-.flex3 {
-}
+
 </style>
