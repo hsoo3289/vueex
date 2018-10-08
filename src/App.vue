@@ -24,7 +24,7 @@ export default {
 <style>
 @font-face {
   font-family: 'Noto Sans KR';
-  src: url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  src: url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 }
 #app {
   background: lightgray;
@@ -32,7 +32,7 @@ export default {
 }
 #router-view {
   background-color: yellowgreen;
-  height: 80vh;
+  height: 90vh;
   max-width: 1080px;
   margin-left: 10%;
   margin-right: 10%;

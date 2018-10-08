@@ -1,6 +1,7 @@
 import Vue from "vue"
 import Vuex from 'vuex'
 import Constant from './constant'
+import MemberModule from './member/MemberIndex'
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
@@ -15,9 +16,15 @@ const store = new Vuex.Store({
   actions: {
     [Constant.LOGIN.LOGIN]: (store, payload) => {
       console.log(store, payload);
-      
     }
-
+  },
+  getters:{ 
+    member (state) {
+      return state.member;
+    } 
+  },
+  modules: {
+    member: MemberModule
   }
 });
 
