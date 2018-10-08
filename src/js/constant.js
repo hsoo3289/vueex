@@ -1,6 +1,6 @@
 export default {
   LOGIN: {
-    LOGIN: "login",
+    LOGIN: "loginroot",
     REGISTER: "memgerRegister"
   }
 }
