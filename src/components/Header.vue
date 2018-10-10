@@ -2,6 +2,7 @@
   <div id="header">
     <router-link to="/" class="btn flex1">Home</router-link>
     <router-link to="/login" class="btn flex2">Login</router-link>
+    <router-link to="/register" class="btn flex2">Register</router-link>
     <router-link to="/css" class="btn">CSS ex</router-link>
     <router-link to="/footer" class="btn">FOOTER ex</router-link>
     <router-link to="/header" class="btn">Header ex</router-link>

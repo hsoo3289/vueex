@@ -8,6 +8,7 @@
       <button @click="testActions">ActionTest</button>
       <button @click="testMutations">MutationTest</button>
       <button @click="submitLoginForm">Submit</button>
+      
     </div>
   </div>
 </template>
